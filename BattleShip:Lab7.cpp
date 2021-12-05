@@ -100,7 +100,7 @@ void WelcomeMessage(bool &again) // prints welcome message and askes what the pl
     system("clear");
 }
 
-void setBoards(BOARD board)
+void setBoards(BOARD board) // starting boards
 {
     for(int y = 0; y < 10; y++)
     {
@@ -114,7 +114,7 @@ void setBoards(BOARD board)
     }
 }
 
-void ScreenBoard(BOARD board , int player)
+void ScreenBoard(BOARD board , int player) // outputting the board to the screen
 {
     for(int z = 0; z < player + 2; z++)
     {
@@ -514,7 +514,7 @@ void shipPlaceComputer(BOARD board) // randomly places ships on the board, also 
     system("clear");
 }
 
-void GameFinishCheck(BOARD board , bool &game , int &losses , int &wins)
+void GameFinishCheck(BOARD board , bool &game , int &losses , int &wins) // checking to see if the player or computer have destroyed all of the enemies ships
 {
     int carrier = 0;
     int battleship = 0;
@@ -596,7 +596,7 @@ void GameFinishCheck(BOARD board , bool &game , int &losses , int &wins)
         }
 }
 
-void GameUpdate(BOARD board)
+void GameUpdate(BOARD board) // checking to see if any of the ships have been destoryed from both the player and computer board's
 {
     int carrier = 0;
     int battleship = 0;
@@ -702,7 +702,7 @@ void GameUpdate(BOARD board)
     }
 }
 
-void guessplayer(BOARD board , int &player , bool &game , int &losses)
+void guessplayer(BOARD board , int &player , bool &game , int &losses) // player gets to fire at the computer's board
 {
     int gy;
     int gx;
@@ -789,7 +789,7 @@ void guessplayer(BOARD board , int &player , bool &game , int &losses)
         board [gy][gx][5] = 'X';
 }
 
-void guessComputer(BOARD board)
+void guessComputer(BOARD board) // computer randomly guesses to hit the players board
 {
     int gy;
     int gx;
